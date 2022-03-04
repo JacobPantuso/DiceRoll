@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20036.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20018.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiceRoll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="3K9-0A-EOP">
-                                <rect key="frame" x="89.666666666666686" y="174" width="249" height="118"/>
+                                <rect key="frame" x="82.5" y="174" width="249" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="6pT-87-YOH">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="118"/>
@@ -35,26 +35,50 @@
                                     <constraint firstAttribute="height" constant="118" id="Pnt-Ul-HkT"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kde-RF-DXL">
-                                <rect key="frame" x="183.66666666666666" y="348" width="61" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kde-RF-DXL">
+                                <rect key="frame" x="176.5" y="348" width="61" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="lhe-ca-rgF"/>
                                     <constraint firstAttribute="width" constant="61" id="waC-x9-Irr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-6q-i2x">
+                                <rect key="frame" x="30" y="722" width="354" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ee1-Vq-EfC"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Roll the Dice">
+                                    <fontDescription key="titleFontDescription" name="Georgia" family="Georgia" pointSize="16"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="rollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOl-63-2Gt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kde-RF-DXL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aqu-4l-k2I"/>
                             <constraint firstItem="kde-RF-DXL" firstAttribute="top" secondItem="3K9-0A-EOP" secondAttribute="bottom" constant="56" id="VpD-KN-vLi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fU9-6q-i2x" secondAttribute="trailing" constant="30" id="d7h-bo-Ua3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fU9-6q-i2x" secondAttribute="bottom" constant="100" id="eUq-zF-qav"/>
                             <constraint firstItem="3K9-0A-EOP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fRd-Hf-qdn"/>
                             <constraint firstItem="3K9-0A-EOP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="kKT-vg-nvY"/>
+                            <constraint firstItem="fU9-6q-i2x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="wPy-Nc-wG2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ImageView1" destination="6pT-87-YOH" id="D5w-Ht-yXV"/>
+                        <outlet property="ImageView2" destination="Hni-ao-Snf" id="6eI-qc-70b"/>
+                        <outlet property="resultLabel" destination="kde-RF-DXL" id="Opz-SN-Frk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,6 +90,9 @@
         <image name="dice3" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
